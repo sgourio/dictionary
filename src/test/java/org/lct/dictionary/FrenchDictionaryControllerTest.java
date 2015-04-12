@@ -4,13 +4,7 @@
  * sylvain.gourio@gmail.com
  */
 
-/*
- * Dictionary REST module 2015.
- * Written by Sylvain Gourio
- * sylvain.gourio@gmail.com
- */
-
-package dictionary;
+package org.lct.dictionary;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-public class EnglishDictionaryControllerTest {
+public class FrenchDictionaryControllerTest {
 
     private MockMvc mvc;
 
@@ -49,7 +43,7 @@ public class EnglishDictionaryControllerTest {
 
     @Test
     public void getExists() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/en/exists?word=test").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/fr/exists?word=test").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("true")));
     }

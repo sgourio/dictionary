@@ -4,11 +4,11 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary.tools;
+package org.lct.dictionary.tools;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dictionary.beans.DAWG;
-import dictionary.tools.impl.DictonaryGeneratorImpl;
+import org.lct.dictionary.beans.DAWG;
+import org.lct.dictionary.tools.impl.DictonaryGeneratorImpl;
 
 import java.io.File;
 import java.io.IOException;

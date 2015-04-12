@@ -4,7 +4,7 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary;
+package org.lct.dictionary;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

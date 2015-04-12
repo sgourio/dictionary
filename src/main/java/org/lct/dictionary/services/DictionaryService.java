@@ -4,9 +4,9 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary.services;
+package org.lct.dictionary.services;
 
-import dictionary.beans.Dictionary;
+import org.lct.dictionary.beans.Dictionary;
 
 import java.util.Set;
 

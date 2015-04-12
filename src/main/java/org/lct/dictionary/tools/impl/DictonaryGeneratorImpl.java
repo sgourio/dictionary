@@ -4,10 +4,10 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary.tools.impl;
+package org.lct.dictionary.tools.impl;
 
-import dictionary.beans.DAWG;
-import dictionary.tools.DictionaryGenerator;
+import org.lct.dictionary.beans.DAWG;
+import org.lct.dictionary.tools.DictionaryGenerator;
 
 import java.io.File;
 import java.io.FileNotFoundException;

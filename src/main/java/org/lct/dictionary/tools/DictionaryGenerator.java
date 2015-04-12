@@ -4,9 +4,9 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary.tools;
+package org.lct.dictionary.tools;
 
-import dictionary.beans.DAWG;
+import org.lct.dictionary.beans.DAWG;
 
 import java.io.File;
 

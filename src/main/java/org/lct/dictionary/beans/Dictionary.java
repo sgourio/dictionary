@@ -4,16 +4,12 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary.beans;
+package org.lct.dictionary.beans;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.core.io.UrlResource;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 

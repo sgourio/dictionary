@@ -1,3 +1,6 @@
+project.group = 'org.lct'
+project.version = '1.00.02'
+
 buildscript {
     repositories {
         mavenCentral()

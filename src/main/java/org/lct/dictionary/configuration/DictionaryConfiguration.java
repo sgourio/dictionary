@@ -4,10 +4,10 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary.configuration;
+package org.lct.dictionary.configuration;
 
-import dictionary.services.DictionaryService;
-import dictionary.services.impl.DictionaryServiceImpl;
+import org.lct.dictionary.services.DictionaryService;
+import org.lct.dictionary.services.impl.DictionaryServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -4,11 +4,11 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary.services.impl;
+package org.lct.dictionary.services.impl;
 
-import dictionary.beans.DAWG;
-import dictionary.beans.Dictionary;
-import dictionary.services.DictionaryService;
+import org.lct.dictionary.beans.DAWG;
+import org.lct.dictionary.beans.Dictionary;
+import org.lct.dictionary.services.DictionaryService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

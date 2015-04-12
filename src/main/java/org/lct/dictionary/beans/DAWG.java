@@ -4,7 +4,7 @@
  * sylvain.gourio@gmail.com
  */
 
-package dictionary.beans;
+package org.lct.dictionary.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
