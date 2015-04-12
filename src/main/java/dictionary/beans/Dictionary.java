@@ -43,9 +43,10 @@ public enum Dictionary {
     }
 
     public static Dictionary getByLang(String lang){
-        switch (lang){
-            case "en": return english;
-            default: return french;
+        if( "en".equals(lang) ) {
+            return english;
+        }else{
+            return french;
         }
     }
 }
