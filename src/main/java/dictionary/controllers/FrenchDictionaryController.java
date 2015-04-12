@@ -8,6 +8,8 @@ package dictionary.controllers;
 
 import dictionary.beans.Dictionary;
 import dictionary.services.DictionaryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,13 +21,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/fr")
 public class FrenchDictionaryController {
-
+    private static Logger logger = LoggerFactory.getLogger(FrenchDictionaryController.class);
 
     @Autowired
     private DictionaryService dictionaryService;
 
     @RequestMapping("/exists")
     public boolean exists(@RequestParam(value="word", defaultValue="World") String word) {
-        return dictionaryService.exist(word, Dictionary.french);
+        boolean answer = dictionaryService.exist(word, Dictionary.french);
+        if( logger.isDebugEnabled() ) {
+            logger.debug("Ask for \"" + word + "\" : " + answer);
+        }
+        return answer;
     }
 }
