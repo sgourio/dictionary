@@ -41,4 +41,11 @@ public enum Dictionary {
     public DAWG getDawg() {
         return dawg;
     }
+
+    public static Dictionary getByLang(String lang){
+        switch (lang){
+            case "en": return english;
+            default: return french;
+        }
+    }
 }

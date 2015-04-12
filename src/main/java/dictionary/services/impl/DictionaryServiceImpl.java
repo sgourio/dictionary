@@ -28,6 +28,7 @@ public class DictionaryServiceImpl implements DictionaryService {
 			return false;
 		}
 		word = StringUtils.upperCase(word);
+        word = StringUtils.stripAccents(word);
 		if( !word.endsWith("|") ){
 			word = word + "|";
 		}
@@ -229,6 +230,8 @@ public class DictionaryServiceImpl implements DictionaryService {
 
 
 	public Set<String> findAnagrams(String word, Dictionary dictionary){
+        word = StringUtils.upperCase(word);
+        word = StringUtils.stripAccents(word);
 		String pattern = "";
 		for(int i = 0 ; i < word.length() && i < 11; i++){
 			pattern +="_";
