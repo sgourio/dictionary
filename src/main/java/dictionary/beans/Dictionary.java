@@ -10,9 +10,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.UrlResource;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * Created by sgourio on 12/04/15.
@@ -27,10 +30,9 @@ public enum Dictionary {
 
     Dictionary(String fileName) {
         try {
-            ClassPathResource cpr = new ClassPathResource(fileName);
-            File jsonFile = cpr.getFile();
+            URL cpr = this.getClass().getClassLoader().getResource(fileName);
             ObjectMapper mapper = new ObjectMapper();
-            dawg = mapper.readValue(jsonFile, DAWG.class);
+            dawg = mapper.readValue(cpr, DAWG.class);
         } catch (IOException e) {
             logger.error("", e);
         }
