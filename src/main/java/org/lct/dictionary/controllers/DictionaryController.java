@@ -22,7 +22,7 @@ import java.util.Set;
  * Created by sgourio on 12/04/15.
  */
 @RestController
-@RequestMapping("/{lang}")
+@RequestMapping("/dictionary/{lang}")
 public class DictionaryController {
     private static Logger logger = LoggerFactory.getLogger(DictionaryController.class);
 

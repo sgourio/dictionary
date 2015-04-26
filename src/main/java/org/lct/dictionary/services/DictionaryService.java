@@ -6,6 +6,7 @@
 
 package org.lct.dictionary.services;
 
+import org.lct.dictionary.beans.DAWG;
 import org.lct.dictionary.beans.Dictionary;
 
 import java.util.Set;

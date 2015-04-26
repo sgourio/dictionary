@@ -43,7 +43,7 @@ public class FrenchDictionaryControllerTest {
 
     @Test
     public void getExists() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/fr/exists?word=test").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/dictionary/fr/exists?word=test").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("true")));
     }

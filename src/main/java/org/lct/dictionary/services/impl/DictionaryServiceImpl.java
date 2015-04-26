@@ -240,5 +240,5 @@ public class DictionaryServiceImpl implements DictionaryService {
 		
 		return completePattern(pattern, word, dictionary);
 	}
-	
+
 }
