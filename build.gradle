@@ -38,4 +38,4 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
 
-mainClassName = "dictionary.Application"
+mainClassName = "org.lct.dictionary.Application"
