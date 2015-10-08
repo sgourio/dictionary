@@ -18,7 +18,7 @@ import java.net.URL;
  */
 public enum Dictionary {
 
-    french("french.json"),
+    french("ods7.json"),
     english("sowpod.json");
 
     private final Logger logger = LoggerFactory.getLogger(Dictionary.class);
