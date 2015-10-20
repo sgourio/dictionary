@@ -63,10 +63,14 @@ public class DictionaryServiceImpl implements DictionaryService {
 	public Set<String> findSuffix(String wordPrefix, Dictionary dictionary ){
         Set<String> retour = new HashSet<String>();
 		DAWG dawg = findNode(dictionary.getDawg(), wordPrefix);
-		if( dawg != null ){
-			for( String s : findAllSuffix(dawg)){
-				retour.add(wordPrefix + s );
-			}
+		if( dawg != null && !dawg.isLeaf() ){
+            for( DAWG child : dawg.getChildren().values()){
+                if( !child.isLeaf() ) {
+                    for (String s : findAllSuffix(child)) {
+                        retour.add(wordPrefix + s);
+                    }
+                }
+            }
 		}
 		return retour;
 	}
