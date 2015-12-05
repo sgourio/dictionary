@@ -6,6 +6,7 @@
 
 package org.lct.dictionary.tools.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.lct.dictionary.beans.DAWG;
 import org.lct.dictionary.tools.DictionaryGenerator;
 
@@ -21,13 +22,16 @@ import java.util.TreeMap;
 public class DictonaryGeneratorImpl implements DictionaryGenerator{
 
     @Override
-    public DAWG createFromFile(File txtFile) {
+    public DAWG createFromFile(File txtFile, boolean reverse) {
         DAWG dawg = new DAWG('_');
         File file = txtFile;
         try {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String mot = scanner.nextLine();
+                if( reverse ){
+                    mot = StringUtils.reverse(mot);
+                }
                 addWordDAWG(dawg, mot + "|");
             }
         } catch (FileNotFoundException e) {

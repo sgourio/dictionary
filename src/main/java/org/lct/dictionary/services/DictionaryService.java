@@ -41,6 +41,14 @@ public interface DictionaryService {
      */
     public Set<String> findSuffix(String wordPrefix, Dictionary dictionary );
 
+    /**
+     * Find possible prefix of this word
+     * @param wordPrefix
+     * @param dictionary
+     * @return
+     */
+    public Set<String> findPrefix(String wordPrefix, Dictionary dictionary );
+
 
     /**
      * Find possible words with this pattern

@@ -20,12 +20,12 @@ public class MainDirectoryGenerator {
 
     public static void main(String... args){
         DictionaryGenerator dictionaryGenerator = new DictonaryGeneratorImpl();
-        File txtFile = new File("/home/sgourio/workspace/lct-play2/conf/sowpod.txt");
-        DAWG dawg = dictionaryGenerator.createFromFile(txtFile);
+        File txtFile = new File("/home/sgourio/workspace/scrabble/lct-play2/conf/sowpod.txt");
+        DAWG dawg = dictionaryGenerator.createFromFile(txtFile, true);
 
         ObjectMapper mapper = new ObjectMapper();
         try {
-            mapper.writeValue(new File("/home/sgourio/workspace/dictionary/src/main/resources/sowpod.json"), dawg);
+            mapper.writeValue(new File("/home/sgourio/workspace/scrabble/dictionary/src/main/resources/reverse-sowpod.json"), dawg);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -95,7 +95,23 @@ public class DictionaryServiceImpl implements DictionaryService {
 		return retour;
 	}
 
-	/**
+    @Override
+    public Set<String> findPrefix(String wordSuffix, Dictionary dictionary) {
+        Set<String> retour = new HashSet<String>();
+        DAWG dawg = findNode(dictionary.getReverseDawg(), wordSuffix);
+        if( dawg != null && !dawg.isLeaf() ){
+            for( DAWG child : dawg.getChildren().values()){
+                if( !child.isLeaf() ) {
+                    for (String s : findAllSuffix(child)) {
+                        retour.add(wordSuffix + s);
+                    }
+                }
+            }
+        }
+        return retour;
+    }
+
+    /**
 	 * Return the node at the path
 	 * @param dawg
 	 * @param path

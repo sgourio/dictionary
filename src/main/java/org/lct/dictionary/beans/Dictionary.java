@@ -18,17 +18,21 @@ import java.net.URL;
  */
 public enum Dictionary {
 
-    french("ods7.json"),
-    english("sowpod.json");
+    french("ods7.json","reverse-ods7.json"),
+    english("sowpod.json", "reverse-sowpod.json");
 
     private final Logger logger = LoggerFactory.getLogger(Dictionary.class);
     private DAWG dawg;
+    private DAWG reverseDawg;
 
-    Dictionary(String fileName) {
+    Dictionary(String fileName, String reverseFileName) {
         try {
             URL cpr = this.getClass().getClassLoader().getResource(fileName);
             ObjectMapper mapper = new ObjectMapper();
             dawg = mapper.readValue(cpr, DAWG.class);
+
+            cpr = this.getClass().getClassLoader().getResource(reverseFileName);
+            reverseDawg = mapper.readValue(cpr, DAWG.class);
         } catch (IOException e) {
             logger.error("", e);
         }
@@ -36,6 +40,9 @@ public enum Dictionary {
 
     public DAWG getDawg() {
         return dawg;
+    }
+    public DAWG getReverseDawg() {
+        return reverseDawg;
     }
 
     public static Dictionary getByLang(String lang){

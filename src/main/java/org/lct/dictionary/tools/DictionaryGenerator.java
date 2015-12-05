@@ -15,5 +15,5 @@ import java.io.File;
  */
 public interface DictionaryGenerator {
 
-    public DAWG createFromFile(File txtFile);
+    public DAWG createFromFile(File txtFile, boolean reverse);
 }
