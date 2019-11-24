@@ -18,7 +18,7 @@ import java.net.URL;
  */
 public enum Dictionary {
 
-    french("ods7.json","reverse-ods7.json"),
+    french("ods8.json","reverse-ods8.json"),
     english("sowpod.json", "reverse-sowpod.json");
 
     private final Logger logger = LoggerFactory.getLogger(Dictionary.class);
@@ -27,12 +27,14 @@ public enum Dictionary {
 
     Dictionary(String fileName, String reverseFileName) {
         try {
+            logger.info("init");
             URL cpr = this.getClass().getClassLoader().getResource(fileName);
             ObjectMapper mapper = new ObjectMapper();
             dawg = mapper.readValue(cpr, DAWG.class);
 
             cpr = this.getClass().getClassLoader().getResource(reverseFileName);
             reverseDawg = mapper.readValue(cpr, DAWG.class);
+            logger.info("initialized");
         } catch (IOException e) {
             logger.error("", e);
         }
